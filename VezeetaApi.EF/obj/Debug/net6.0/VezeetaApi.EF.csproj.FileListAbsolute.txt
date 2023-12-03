@@ -1,0 +1,17 @@
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\bin\Debug\net6.0\VezeetaApi.EF.deps.json
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\bin\Debug\net6.0\VezeetaApi.EF.runtimeconfig.json
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\bin\Debug\net6.0\VezeetaApi.EF.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\bin\Debug\net6.0\VezeetaApi.EF.pdb
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.csproj.AssemblyReference.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.AssemblyInfoInputs.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.AssemblyInfo.cs
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.csproj.CoreCompileInputs.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\refint\VezeetaApi.EF.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.pdb
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.genruntimeconfig.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\ref\VezeetaApi.EF.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\bin\Debug\net6.0\VezeetaAPI.Core.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\bin\Debug\net6.0\VezeetaAPI.Core.pdb
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaApi.EF\obj\Debug\net6.0\VezeetaApi.EF.csproj.CopyComplete

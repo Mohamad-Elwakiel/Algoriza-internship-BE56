@@ -1,0 +1,12 @@
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\bin\Debug\net6.0\VezeetaAPI.Core.deps.json
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\bin\Debug\net6.0\VezeetaAPI.Core.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\bin\Debug\net6.0\VezeetaAPI.Core.pdb
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.csproj.AssemblyReference.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.AssemblyInfoInputs.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.AssemblyInfo.cs
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.csproj.CoreCompileInputs.cache
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\refint\VezeetaAPI.Core.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\VezeetaAPI.Core.pdb
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI.Core\obj\Debug\net6.0\ref\VezeetaAPI.Core.dll
