@@ -21,7 +21,7 @@ namespace VezeetaAPI.Core.Repositories
         void Delete (T entity);
 
         void DeleteById(int id);
-
+      
     }
 
 }

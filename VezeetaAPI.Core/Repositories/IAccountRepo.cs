@@ -11,7 +11,6 @@ namespace VezeetaAPI.Core.Repositories
     public interface IAccountRepo
     {
          Task<IdentityResult> SignUpAsync(SignUpModel signUp);
-        Task<IdentityResult> CreateDoctorAccountAsync(SignUpModel signUp, Doctors doctor);
-
+        
     }
 }

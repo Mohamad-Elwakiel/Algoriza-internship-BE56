@@ -62,13 +62,16 @@ namespace VezeetaAPI.Controllers
         {
             return Ok(_basepatient.GetByID(id));    
         }
-        [HttpDelete("RemovePatient /{id}")]
-        public IActionResult DeleteByPatientId(int id)
+        [HttpGet("number of patients")]
+        public IActionResult GetNumberOfPatients()
         {
-            _basepatient.DeleteById(id);
-            return Ok();
+            return Ok(_basepatient.GetAll().Count());   
         }
-
+        [HttpGet("number of doctors")]
+        public IActionResult GetNumberOfDoctors() 
+        {
+            return Ok(_basedoctor.GetAll().Count());
+        }
     }
     
 }

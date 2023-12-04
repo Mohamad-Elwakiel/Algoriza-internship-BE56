@@ -12,8 +12,15 @@ namespace VezeetaAPI.Core.Models
     {
         
         public int RequestsId { get; set; }
-        public int DoctorId { get; set; }   
+        public int DoctorId { get; set; }
+        public enum RequestStatus
+        { 
+            pending,
+            completed,
+            cancelled,
+        }
 
+        public RequestStatus RequestState { get; set; }
         public int PatientId { get; set; }
         public enum RequestDay
         {

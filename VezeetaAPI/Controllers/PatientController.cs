@@ -25,7 +25,18 @@ namespace VezeetaAPI.Controllers
             return Unauthorized();
 
         }
+        [HttpPost("SignIn")]
+        public async Task<IActionResult> signIn([FromBody] SignInModel signIn)
+        {
+            var result = await _account.LoginAsync(signIn);
+            if (string.IsNullOrEmpty(result))
+            {
+                return Unauthorized();
+            }
+            return Ok(result);
 
-        
+        }
+
+
     }
 }

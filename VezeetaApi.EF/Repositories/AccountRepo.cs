@@ -39,30 +39,9 @@ namespace VezeetaApi.EF.Repositories
 
 
         }
-        public async Task<IdentityResult> CreateDoctorAccountAsync(SignUpModel signUp, Doctors doctor)
+        public async Task<string> LoginAsync(SignInModel signInModel)
         {
-            var user = new ApplicationUser()
-            {
-                FirstName = signUp.FirstName,
-                LastName = signUp.LastName,
-                Email = signUp.Email,
-                PhoneNumber = signUp.PhoneNumber,
-                gender = (ApplicationUser.genderEnum)signUp.Gender,
-                ImageUrl = signUp.ImageUrl,
-                DOB = signUp.DOB,
-                UserName = signUp.Email,
-                accountType = signUp.accountType,
-            };
 
-            var Userdoctor = new Doctors
-            {
-                DoctorsId = doctor.DoctorsId,
-                Specalizations = doctor.Specalizations,
-                SpeclizationID = doctor.SpeclizationID,
-
-            };
-            _context.SaveChanges();
-            return await _userManager.CreateAsync(user, signUp.Password);
         }
     }     
 }
