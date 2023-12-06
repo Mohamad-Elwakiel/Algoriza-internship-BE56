@@ -35,7 +35,9 @@ namespace VezeetaAPI.Core.Models
         public DateFormat DOB { get; set; } 
 
         public string accountType { get; set; }     
-        public string ImageUrl { get; set; }    
+        public string ImageUrl { get; set; }
+        [Required]
+        public int sepcializationID { get; set; }
 
     }
 }

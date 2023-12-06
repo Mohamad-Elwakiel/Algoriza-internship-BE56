@@ -42,6 +42,7 @@ namespace VezeetaApi.EF.Repositories
                 DOB = signUp.DOB,
                 UserName = signUp.Email,
                 accountType = signUp.accountType,
+                
 
             };
             return await _userManager.CreateAsync(user, signUp.Password);

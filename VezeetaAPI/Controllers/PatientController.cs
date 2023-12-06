@@ -15,7 +15,7 @@ namespace VezeetaAPI.Controllers
             _account = account;
         }
         [HttpPost("SignUp")]
-        public async Task<IActionResult> signUp([FromBody] SignUpModel signUp)
+        public async Task<IActionResult> signUp([FromForm] SignUpModel signUp)
         {   
             var result = await _account.SignUpAsync(signUp);    
             if(result.Succeeded) 
@@ -26,7 +26,7 @@ namespace VezeetaAPI.Controllers
 
         }
         [HttpPost("SignIn")]
-        public async Task<IActionResult> signIn([FromBody] SignInModel signIn)
+        public async Task<IActionResult> signIn([FromForm] SignInModel signIn)
         {
             var result = await _account.LoginAsync(signIn);
             if (string.IsNullOrEmpty(result))

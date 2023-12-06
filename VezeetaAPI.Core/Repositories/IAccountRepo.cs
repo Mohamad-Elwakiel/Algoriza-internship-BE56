@@ -12,7 +12,7 @@ namespace VezeetaAPI.Core.Repositories
     {
          Task<IdentityResult> SignUpAsync(SignUpModel signUp);
 
-        Task<string> LoginAsync(SignInModel signInModel)
+        Task<string> LoginAsync(SignInModel signInModel);
 
 
     }

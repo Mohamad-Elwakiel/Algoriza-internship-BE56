@@ -22,7 +22,7 @@ namespace VezeetaAPI.Controllers
         }
 
         [HttpPost("CreateDoctorAccount")]
-        public async Task<IActionResult> signUp([FromBody] SignUpModel signUp)
+        public async Task<IActionResult> signUp([FromForm] SignUpModel signUp)
         {
             var result = await _accountRepo.SignUpAsync(signUp);
 
@@ -36,9 +36,9 @@ namespace VezeetaAPI.Controllers
 
         }
         [HttpGet("GetAllDoctors")]
-        public IActionResult GetAllDoctors()
+        public IActionResult GetAllDoctors([FromForm] int page, [FromForm] int pageSize)
         {
-            return Ok(_basedoctor.GetAll());
+            return Ok(_basedoctor.GetAllByPage(page,pageSize));
         }
 
         [HttpGet("GetDoctorByID/{id}")]
@@ -52,11 +52,20 @@ namespace VezeetaAPI.Controllers
             _basedoctor.DeleteById(id);
             return Ok();
         }
-        [HttpGet("GetAllPatients")]
-        public IActionResult GetAllPatients()
+        [HttpPost("Update Doctor")]
+        public IActionResult UpdateDoctor([FromForm] Doctors doctors)
         {
-            return Ok(_basepatient.GetAll());
+            _basedoctor.Update(doctors);
+            
+            return Ok();
         }
+
+        [HttpGet("GetAllPatients")]
+        public IActionResult GetAllPatients([FromForm] int page, [FromForm] int pageSize)
+        {
+            return Ok(_basepatient.GetAllByPage(page, pageSize));
+        }
+
         [HttpGet("GetPatientByID/{id}")]
         public IActionResult GetPatientById([FromRoute] int id)
         {
@@ -72,6 +81,17 @@ namespace VezeetaAPI.Controllers
         {
             return Ok(_basedoctor.GetAll().Count());
         }
+        [HttpGet("top 10 doctors")]
+        public IActionResult GetTopTenDoctors()
+        {
+            return Ok(_basedoctor.GetTopTenDoctors());
+        }
+        [HttpGet("Top 5 specialization")]
+        public IActionResult GetTopFiveSpec() 
+        {
+            return Ok(_basedoctor.GetTopFiveSpecalizations());
+        }
+
     }
     
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using VezeetaAPI.Core.Models;
 
 namespace VezeetaAPI.Core.Repositories
 {
@@ -21,7 +22,12 @@ namespace VezeetaAPI.Core.Repositories
         void Delete (T entity);
 
         void DeleteById(int id);
-      
+        List<Doctors> GetTopTenDoctors();
+        List<Specalization> GetTopFiveSpecalizations();
+        IEnumerable<T> GetAllByPage(int page = 1, int pageSize = 10);
+
+
+
     }
 
 }

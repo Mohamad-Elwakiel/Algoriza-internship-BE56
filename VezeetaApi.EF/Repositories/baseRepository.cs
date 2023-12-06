@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using VezeetaAPI.Core.Models;
 using VezeetaAPI.Core.Repositories;
 
 namespace VezeetaApi.EF.Repositories
@@ -60,7 +61,27 @@ namespace VezeetaApi.EF.Repositories
             }
 
         }
+        public List<Doctors> GetTopTenDoctors()
+        {
+            var top =  (from d in _context.doctors
+                      orderby d.Requests
+                      select d).Take(10).ToList();
+            return top;
+            
+        }
+        public List<Specalization> GetTopFiveSpecalizations() 
+        {
+            var topSpec = (from s in _context.specalizations
+                           orderby s.Doctors
+                           select s).Take(5).ToList();
+            return topSpec; 
+        }
       
-
+        public IEnumerable<T> GetAllByPage(int page = 1, int pageSize=10)
+        {
+            
+            var result = _context.Set<T>().ToList();
+            return result.Skip(page-1*pageSize).Take(pageSize).ToList();
+        }
     }
 }
