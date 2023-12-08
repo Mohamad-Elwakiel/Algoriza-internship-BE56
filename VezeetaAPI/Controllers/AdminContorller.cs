@@ -22,9 +22,9 @@ namespace VezeetaAPI.Controllers
         }
 
         [HttpPost("CreateDoctorAccount")]
-        public async Task<IActionResult> signUp([FromForm] SignUpModel signUp)
+        public async Task<IActionResult> signUp([FromForm] SignUpModel signUp, List<Specalization> specs)
         {
-            var result = await _accountRepo.SignUpAsync(signUp);
+            var result = await _accountRepo.SignUpAsync(signUp, specs);
 
             if (result.Succeeded)
             {

@@ -25,7 +25,7 @@ namespace VezeetaAPI
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;
-                options.ClaimsIdentity.RoleClaimType = "Doctor";
+                
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -63,10 +63,10 @@ namespace VezeetaAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseDeveloperExceptionPage();
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+                app.UseAuthorization();
             app.UseAuthentication();
 
             app.MapControllers();

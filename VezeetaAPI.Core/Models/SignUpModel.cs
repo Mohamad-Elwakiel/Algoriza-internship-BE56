@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VezeetaAPI.Core.Constants;
 
 namespace VezeetaAPI.Core.Models
 {
@@ -24,20 +25,15 @@ namespace VezeetaAPI.Core.Models
         public string ConfirmPassword { get;set; }
         [Required]
         public string  PhoneNumber { get; set; }
-        public enum genderEnum
-        { 
-            Male = 1,
-            Female = 0,
-        }
+       
         [Required]
-        public genderEnum Gender { get; set; }
+        public Gender Gender { get; set; }
         [Required]
-        public DateFormat DOB { get; set; } 
+        public DateTime DOB { get; set; } 
 
         public string accountType { get; set; }     
         public string ImageUrl { get; set; }
-        [Required]
-        public int sepcializationID { get; set; }
+     
 
     }
 }

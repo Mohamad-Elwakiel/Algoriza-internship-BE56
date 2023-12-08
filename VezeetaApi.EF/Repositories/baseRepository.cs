@@ -24,6 +24,7 @@ namespace VezeetaApi.EF.Repositories
             _context.SaveChanges(); 
             return entity;  
         }
+     
 
         public void Delete(T entity)
         {
@@ -77,7 +78,7 @@ namespace VezeetaApi.EF.Repositories
             return topSpec; 
         }
       
-        public IEnumerable<T> GetAllByPage(int page = 1, int pageSize=10)
+        public IEnumerable<T> GetAllByPage(int page = 1, int pageSize=10, int id)
         {
             
             var result = _context.Set<T>().ToList();

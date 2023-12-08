@@ -257,7 +257,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("authors");
+                    b.ToTable("authors", (string)null);
                 });
 
             modelBuilder.Entity("VezeetaAPI.Core.Models.Book", b =>
@@ -280,7 +280,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("books");
+                    b.ToTable("books", (string)null);
                 });
 
             modelBuilder.Entity("VezeetaAPI.Core.Models.Doctors", b =>
@@ -302,7 +302,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("doctors");
+                    b.ToTable("doctors", (string)null);
                 });
 
             modelBuilder.Entity("VezeetaAPI.Core.Models.Patient", b =>
@@ -324,7 +324,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("patients");
+                    b.ToTable("patients", (string)null);
                 });
 
             modelBuilder.Entity("VezeetaAPI.Core.Models.Requests", b =>
@@ -356,7 +356,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("requests");
+                    b.ToTable("requests", (string)null);
                 });
 
             modelBuilder.Entity("VezeetaAPI.Core.Models.Specalization", b =>
@@ -382,7 +382,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasIndex("DoctorsId");
 
-                    b.ToTable("specalizations");
+                    b.ToTable("specalizations", (string)null);
                 });
 
             modelBuilder.Entity("VezeetaAPI.Core.Models.Times", b =>
@@ -406,7 +406,7 @@ namespace VezeetaApi.EF.Migrations
 
                     b.HasIndex("RequestsId");
 
-                    b.ToTable("Times");
+                    b.ToTable("Times", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

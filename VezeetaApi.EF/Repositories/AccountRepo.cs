@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using VezeetaApi.EF.Migrations;
+using VezeetaAPI.Core.Constants;
 using VezeetaAPI.Core.Models;
 using VezeetaAPI.Core.Repositories;
 
@@ -29,6 +30,33 @@ namespace VezeetaApi.EF.Repositories
             _signInManager = signInManager;  
             _configuration = configuration; 
         }
+        public async Task<IdentityResult> SignUpAsync(SignUpModel signUp, List<Specalization> specs)
+        {
+            var user = new ApplicationUser()
+            {
+                FirstName = signUp.FirstName,
+                LastName = signUp.LastName,
+                Email = signUp.Email,
+                PhoneNumber = signUp.PhoneNumber,
+                gender = (Gender)signUp.Gender,
+                ImageUrl = signUp.ImageUrl,
+                DOB = signUp.DOB,
+                UserName = signUp.Email,
+                accountType = signUp.accountType,
+
+
+            };
+            var doctor = new Doctors()
+            { 
+                UserId = user.Id,   
+                Specalizations = specs,
+
+            };
+            _context.SaveChanges();
+            return await _userManager.CreateAsync(user, signUp.Password);
+
+
+        }
         public async Task<IdentityResult> SignUpAsync(SignUpModel signUp)
         {
             var user = new ApplicationUser()
@@ -37,14 +65,16 @@ namespace VezeetaApi.EF.Repositories
                 LastName = signUp.LastName,
                 Email = signUp.Email,
                 PhoneNumber = signUp.PhoneNumber,
-                gender = (ApplicationUser.genderEnum)signUp.Gender,
+                gender = (Gender)signUp.Gender,
                 ImageUrl = signUp.ImageUrl,
                 DOB = signUp.DOB,
                 UserName = signUp.Email,
                 accountType = signUp.accountType,
-                
+
 
             };
+         
+
             return await _userManager.CreateAsync(user, signUp.Password);
 
 

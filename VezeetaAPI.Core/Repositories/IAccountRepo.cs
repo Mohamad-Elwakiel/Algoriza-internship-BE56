@@ -10,6 +10,7 @@ namespace VezeetaAPI.Core.Repositories
 {
     public interface IAccountRepo
     {
+         Task<IdentityResult> SignUpAsync(SignUpModel signUp, List<Specalization> specs);
          Task<IdentityResult> SignUpAsync(SignUpModel signUp);
 
         Task<string> LoginAsync(SignInModel signInModel);

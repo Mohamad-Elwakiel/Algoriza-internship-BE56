@@ -75,3 +75,4 @@ C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI\bin\Debug\net6.0\Microsoft.Asp
 C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\mohel\source\repos\VezeetaAPI\VezeetaAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

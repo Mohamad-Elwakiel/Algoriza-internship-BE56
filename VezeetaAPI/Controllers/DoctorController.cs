@@ -10,10 +10,12 @@ namespace VezeetaAPI.Controllers
     public class DoctorController : ControllerBase
     {
         private readonly IAccountRepo _account;
-        public DoctorController(IAccountRepo account)
+        private readonly IbaseRepository<Requests> _baseRequest;
+        public DoctorController(IAccountRepo account, IbaseRepository<Requests> baseRequest)
         {
-            _account = account; 
-            
+            _account = account;
+            _baseRequest = baseRequest;
+
         }
         [HttpPost("SignIn")]
         public async Task<IActionResult> signIn([FromBody] SignInModel signIn)
@@ -26,6 +28,13 @@ namespace VezeetaAPI.Controllers
             return Ok(result);
 
         }
+        [HttpPost("Create Booking")]
+        public IActionResult createBooking([FromForm] Requests request)
+        {
+            _baseRequest.Add(request);
 
+            return Ok();
+        }
+    
     }
 }
