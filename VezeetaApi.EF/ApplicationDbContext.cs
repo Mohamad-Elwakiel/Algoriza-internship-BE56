@@ -15,6 +15,63 @@ namespace VezeetaApi.EF
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ApplicationUser>()
+                .HasData(new ApplicationUser
+                {
+                    UserName =  "Ah",
+                    Id = "1",
+                    accountType = "Doctor",
+                    Email = "DoctorTest@test.com",
+                    PasswordHash = null,
+                    DOB = (Microsoft.VisualBasic.DateFormat)(22 -10-2023),
+                    FirstName = "Mohamad",
+                    LastName = "Elwakiel",
+                    gender=0,
+                    PhoneNumber = "011215",
+                    
+
+
+
+                });
+            modelBuilder.Entity<ApplicationUser>()
+                .HasData(new ApplicationUser
+                {
+                    UserName = "Mo", 
+                    Id="2",
+                    accountType = "Patient",
+                    Email = "PatientTest@test.com",
+                    PasswordHash = null,
+                    DOB = (Microsoft.VisualBasic.DateFormat)(22 - 10 - 2023),
+                    FirstName = "Ahmad",
+                    LastName = "Hassan",
+                    gender = 0,
+                    PhoneNumber = "011215",
+
+                });
+            modelBuilder.Entity<Patient>()
+                .HasData(new Patient
+                {
+                    PatientId = 1,
+                    Email = "PatientTest@test.com",
+                   
+                });
+            modelBuilder.Entity<Doctors>()
+                .HasData(new Doctors
+                {
+                    DoctorsId = 1,
+                    UserId = "1",
+                    SpeclizationID = 1,
+                });
+            modelBuilder.Entity<Specalization>()
+                .HasData(new Specalization
+                {
+                    SpecalizationId = 1,
+                    DoctorId = 1,
+                    SpecalizationName = "pediatrician",
+                });
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
