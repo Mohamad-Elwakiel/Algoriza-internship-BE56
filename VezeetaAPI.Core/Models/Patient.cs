@@ -12,7 +12,7 @@ namespace VezeetaAPI.Core.Models
         public string Email { get; set; }   
         public int PatientId { get; set; }  
         public List<Requests> Requests { get; set; }
-
+        public Discount Discount { get; set; }  
         public ApplicationUser User { get; set; }   
 
     }

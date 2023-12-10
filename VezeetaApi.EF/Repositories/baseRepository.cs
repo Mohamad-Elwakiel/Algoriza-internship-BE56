@@ -78,7 +78,7 @@ namespace VezeetaApi.EF.Repositories
             return topSpec; 
         }
       
-        public IEnumerable<T> GetAllByPage(int page = 1, int pageSize=10, int id)
+        public IEnumerable<T> GetAllByPage(int page = 1, int pageSize=10)
         {
             
             var result = _context.Set<T>().ToList();

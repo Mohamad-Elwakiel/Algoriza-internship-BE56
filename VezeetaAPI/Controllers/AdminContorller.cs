@@ -13,16 +13,18 @@ namespace VezeetaAPI.Controllers
         private readonly IAccountRepo _accountRepo;
         private readonly IbaseRepository<Doctors> _basedoctor;
         private readonly IbaseRepository<Patient> _basepatient;
-
-        public AdminContorller(IAccountRepo accountRepo, IbaseRepository<Doctors> basedoctor, IbaseRepository<Patient> basepatient)
+        private readonly IbaseRepository<Discount> _discount;
+        public AdminContorller(IAccountRepo accountRepo, IbaseRepository<Doctors> basedoctor, IbaseRepository<Patient> basepatient
+            , IbaseRepository<Discount> discount)
         {
             _accountRepo = accountRepo;
             _basedoctor = basedoctor;
             _basepatient = basepatient;
+            _discount = discount;
         }
 
         [HttpPost("CreateDoctorAccount")]
-        public async Task<IActionResult> signUp([FromForm] SignUpModel signUp, List<Specalization> specs)
+        public async Task<IActionResult> signUp([FromForm] SignUpModel signUp, [FromForm] List<Specalization> specs)
         {
             var result = await _accountRepo.SignUpAsync(signUp, specs);
 
@@ -38,7 +40,7 @@ namespace VezeetaAPI.Controllers
         [HttpGet("GetAllDoctors")]
         public IActionResult GetAllDoctors([FromForm] int page, [FromForm] int pageSize)
         {
-            return Ok(_basedoctor.GetAllByPage(page,pageSize));
+            return Ok(_basedoctor.GetAllByPage(page, pageSize));
         }
 
         [HttpGet("GetDoctorByID/{id}")]
@@ -56,7 +58,7 @@ namespace VezeetaAPI.Controllers
         public IActionResult UpdateDoctor([FromForm] Doctors doctors)
         {
             _basedoctor.Update(doctors);
-            
+
             return Ok();
         }
 
@@ -69,15 +71,15 @@ namespace VezeetaAPI.Controllers
         [HttpGet("GetPatientByID/{id}")]
         public IActionResult GetPatientById([FromRoute] int id)
         {
-            return Ok(_basepatient.GetByID(id));    
+            return Ok(_basepatient.GetByID(id));
         }
         [HttpGet("number of patients")]
         public IActionResult GetNumberOfPatients()
         {
-            return Ok(_basepatient.GetAll().Count());   
+            return Ok(_basepatient.GetAll().Count());
         }
         [HttpGet("number of doctors")]
-        public IActionResult GetNumberOfDoctors() 
+        public IActionResult GetNumberOfDoctors()
         {
             return Ok(_basedoctor.GetAll().Count());
         }
@@ -87,9 +89,27 @@ namespace VezeetaAPI.Controllers
             return Ok(_basedoctor.GetTopTenDoctors());
         }
         [HttpGet("Top 5 specialization")]
-        public IActionResult GetTopFiveSpec() 
+        public IActionResult GetTopFiveSpec()
         {
             return Ok(_basedoctor.GetTopFiveSpecalizations());
+        }
+        [HttpPost("Add Discount")]
+        public IActionResult addDiscount([FromForm] Discount discount)
+        {
+            _discount.Add(discount);
+            return Ok();
+        }
+        [HttpPost("Update Discount")]
+        public IActionResult updateDiscount([FromForm] Discount discount)
+        {
+            _discount.Update(discount);
+            return Ok();
+        }
+        [HttpDelete("Delete Discount")]
+        public IActionResult DeleteDiscount(int id) 
+        {
+            _discount.DeleteById(id);   
+            return Ok();    
         }
 
     }

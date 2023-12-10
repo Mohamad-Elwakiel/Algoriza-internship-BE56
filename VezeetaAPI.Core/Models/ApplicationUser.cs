@@ -19,7 +19,7 @@ namespace VezeetaAPI.Core.Models
         public Gender gender { get; set; }  
         
 
-        public DateTime DOB { get; set; }
+        public DateFormat DOB { get; set; }
 
         public string accountType { get; set; }
 

@@ -12,10 +12,14 @@ namespace VezeetaAPI.Controllers
         private readonly IAccountRepo _account;
         private readonly IbaseRepository<Doctors> _basedoctor;
         private readonly IbaseRepository<Requests> _baserequest;
-        public PatientController(IAccountRepo account, IbaseRepository<Doctors> basedoctor) 
+        private readonly IBookingRepo _booking;
+        public PatientController(IAccountRepo account, IbaseRepository<Doctors> basedoctor, IbaseRepository<Requests> baserequest
+            ,IBookingRepo booking) 
         {
             _account = account;
-            _basedoctor = basedoctor;   
+            _basedoctor = basedoctor;  
+            _baserequest = baserequest; 
+            _booking = booking;
         }
         [HttpPost("SignUp")]
         public async Task<IActionResult> signUp([FromForm] SignUpModel signUp, [FromForm]List<Specalization> specs)
@@ -44,7 +48,20 @@ namespace VezeetaAPI.Controllers
         {
             return Ok(_basedoctor.GetAllByPage(page, pageSize));    
         }
-     
+        [HttpGet("Get All Bookings")]
+        public IActionResult getAllBooking([FromForm] int page, [FromForm] int pageSize)
+        {
+            return Ok(_baserequest.GetAllByPage(page, pageSize));
+
+        }
+        [HttpDelete("Cancel Booking")]
+        public IActionResult DeleteBooking (int id) 
+        {
+            _booking.DeleteBooking(id);
+            return Ok();
+            
+        }
+
 
     }
 }

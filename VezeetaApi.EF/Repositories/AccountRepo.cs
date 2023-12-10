@@ -51,6 +51,7 @@ namespace VezeetaApi.EF.Repositories
                 UserId = user.Id,   
                 Specalizations = specs,
 
+
             };
             _context.SaveChanges();
             return await _userManager.CreateAsync(user, signUp.Password);

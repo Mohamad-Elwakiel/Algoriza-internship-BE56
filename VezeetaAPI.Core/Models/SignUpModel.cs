@@ -29,7 +29,7 @@ namespace VezeetaAPI.Core.Models
         [Required]
         public Gender Gender { get; set; }
         [Required]
-        public DateTime DOB { get; set; } 
+        public DateFormat DOB { get; set; } 
 
         public string accountType { get; set; }     
         public string ImageUrl { get; set; }

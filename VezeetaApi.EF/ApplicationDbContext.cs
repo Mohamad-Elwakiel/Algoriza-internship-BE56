@@ -22,12 +22,12 @@ namespace VezeetaApi.EF
             base.OnConfiguring(optionsBuilder);
         }
 
-       public DbSet<Author> authors { get; set; }   
-       public DbSet<Book> books { get; set; } 
+       
         public DbSet<Doctors> doctors { get; set; }
         public DbSet<Patient> patients { get; set; }
         public DbSet<Specalization> specalizations { get; set; }
         public DbSet<Requests> requests { get; set; }
+        public DbSet<Discount> discounts { get; set; }  
 
 
 
